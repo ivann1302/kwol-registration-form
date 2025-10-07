@@ -8,14 +8,14 @@ type Props = React.InputHTMLAttributes<HTMLInputElement> & {
 
 const Checkbox = forwardRef<HTMLInputElement, Props>(({ label, error, className = '', ...rest }, ref) => {
     return (
-        <div className="w-[320px] xs361:w-[400px] mx-auto">            <label className="flex items-start">
+        <div className="w-[282px] xs361:w-[400px] mx-auto">            <label className="flex items-start">
                 <input
                     ref={ref}
                     type="checkbox"
                     className={`mt-[2px] size-[18px] accent-blueDefault mr-[10px] ${className}`}
                     {...rest}
                 />
-                <span className="font-mont text-[14px] leading-[20px] font-medium text-black">
+                <span className="font-mont text-[14px] leading-[20px] font-medium text-[#626C77]">
           {label}
         </span>
             </label>

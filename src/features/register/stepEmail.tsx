@@ -46,7 +46,7 @@ export default function StepEmail() {
                 />
             </div>
 
-            <div className="w-[320px] xs361:w-[400px]">
+            <div className="w-[280px] xs361:w-[400px]">
                 <Button type="submit" disabled={!isValid}>
                     Продолжить
                 </Button>
@@ -55,7 +55,7 @@ export default function StepEmail() {
                     type="button"
                     variant="gray"
                     className="mt-3"
-                    onClick={() => navigate('/users')}
+                    disabled
                 >
                     Войти
                 </Button>

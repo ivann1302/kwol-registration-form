@@ -63,8 +63,11 @@ export default function StepDetails() {
             />
 
             <div className="space-y-3">
-                <Button type="submit" disabled={!isValid}>
-                    Завершить регистрацию
+                <Button type="submit"
+                        disabled={!isValid}
+                        onClick={() => navigate('/users')}
+                >
+                    Войти
                 </Button>
 
                 <Button type="button" variant="gray" onClick={() => navigate('/register/email')}>

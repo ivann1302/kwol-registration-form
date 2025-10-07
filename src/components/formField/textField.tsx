@@ -9,18 +9,22 @@ type Props = React.InputHTMLAttributes<HTMLInputElement> & {
 const TextField = forwardRef<HTMLInputElement, Props>(({ label, error, className = '', ...rest }, ref) => {
     const errorCls = error ? 'border-red-400' : 'border-[#BCC3D0]/50';
     return (
-        <label className="block w-[320px] xs361:w-[400px] mx-auto">      <span className="mb-1 block font-mont text-[14px] leading-[20px] font-medium text-black">
+        <label className="block w-[280px] xs361:w-[400px] mx-auto">      <span className="mb-1 block font-mont text-[14px] leading-[20px] font-medium text-[#626C77]">
         {label}
       </span>
             <input
                 ref={ref}
                 className={`
-          w-full h-[56px] xs361:h-[60px]
+          w-[280px] h-[56px] xs361:h-[60px]
+          xs361:w-[400px]
           rounded-[16px] bg-grayHover
           border ${errorCls}
           px-4 outline-none
           font-mont font-medium text-[16px] leading-[24px] text-black
           placeholder:text-[#626C77]
+          placeholder:font-mont
+          placeholder:text-[17px]
+          xs361:placeholder:text-[16px]
           focus:border-blueDefault
           ${className}
         `}
