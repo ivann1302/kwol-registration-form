@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+
+@theme {
+    --breakpoint-xs361: 361px;
+}
+
 /* CSS Reset */
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; padding: 0; }
@@ -8,8 +13,5 @@ body { line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smooth
 img, picture, video, canvas, svg { display: block; max-width: 100%; }
 input, button, textarea, select { font: inherit; }
 /* End Reset */
-
-body { font-family: 'Onest', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; }
-h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; }
 
 
