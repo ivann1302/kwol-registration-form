@@ -1,12 +1,10 @@
+// @ts-ignore
+import type { Config } from 'tailwindcss'
+
 export default {
     content: [
         './index.html',
-        './src/**/*.{ts,tsx}',
-    ],
-    safelist: [
-        {
-            pattern: /^(pt|pb)-\[\d+px\]$/,
-        },
+        './src/**/*.{js,ts,jsx,tsx}',
     ],
     theme: {
         extend: {
@@ -37,4 +35,4 @@ export default {
         },
     },
     plugins: [],
-};
+} satisfies Config
