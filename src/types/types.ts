@@ -13,3 +13,10 @@ export interface IButtonProps {
     disabled?: boolean;
     variant?: 'blue' | 'gray';
 }
+
+export const ROUTES = {
+    REGISTER: '/register',
+    REGISTER_EMAIL: '/register/email',
+    REGISTER_DETAILS: '/register/details',
+    USERS: '/users',
+} as const;
