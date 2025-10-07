@@ -17,12 +17,10 @@
     --font-onest: 'Onest', 'ui-sans-serif', 'system-ui', 'sans-serif';
 }
 
-/* CSS Reset */
 *, *::before, *::after { box-sizing: border-box; }
 html, body, #root { height: 100%; }
 body { line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 img, picture, video, canvas, svg { display: block; max-width: 100%; }
 input, button, textarea, select { font: inherit; }
-/* End Reset */
 
 

@@ -6,18 +6,26 @@ import type { EmailStepValues } from './validations';
 import TextField from '../../components/formField/textField';
 import Checkbox from '../../components/formField/checkbox';
 import Button from '../../components/button/button';
+import {getUsers} from "../../storage/storage.ts";
 
 export default function StepEmail() {
     const navigate = useNavigate();
 
-    const { register, handleSubmit, formState: { errors, isValid } } =
+    const { register, handleSubmit, formState: { errors, isValid }, setError } =
         useForm<EmailStepValues>({
             resolver: zodResolver(emailStepSchema),
             mode: 'onChange',
             defaultValues: { email: '', policy: false },
         });
-
     const onSubmit = (data: EmailStepValues) => {
+        const email = data.email.trim().toLowerCase();
+        const exists = getUsers().some(u => u.email.trim().toLowerCase() === email);
+
+        if (exists) {
+            setError('email', { type: 'manual', message: 'Такой e-mail уже зарегистрирован' });
+            return;
+        }
+
         navigate('/register/details', { state: { email: data.email } });
     };
 
