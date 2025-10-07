@@ -1,28 +1,31 @@
-import type { User } from '../types/types.ts';
+import type { TUser } from '../types/types';
 
 const KEY = 'users';
 
-export function getUsers(): User[] {
-    const raw = localStorage.getItem(KEY);
-    if (!raw) return [];
+function read(): TUser[] {
     try {
-        return JSON.parse(raw) as User[];
+        const raw = localStorage.getItem(KEY);
+        return raw ? JSON.parse(raw) as TUser[] : [];
     } catch {
         return [];
     }
 }
 
-export function saveUsers(users: User[]) {
+function write(users: TUser[]) {
     localStorage.setItem(KEY, JSON.stringify(users));
 }
 
-export function addUser(user: User) {
-    const list = getUsers();
-    list.push(user);
-    saveUsers(list);
+export function getUsers(): TUser[] {
+    return read();
+}
+
+export function addUser(u: TUser) {
+    const users = read();
+    users.push(u);
+    write(users);
 }
 
 export function deleteUser(id: string) {
-    const list = getUsers().filter(u => u.id !== id);
-    saveUsers(list);
+    const next = read().filter(u => u.id !== id);
+    write(next);
 }

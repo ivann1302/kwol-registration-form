@@ -5,6 +5,7 @@ export type TUser = {
     email: string;
     name: string;
     password: string;
+    createdAt: string;
 };
 
 export interface IButtonProps {
@@ -12,6 +13,8 @@ export interface IButtonProps {
     onClick?: () => void;
     disabled?: boolean;
     variant?: 'blue' | 'gray';
+    type?: 'button' | 'submit' | 'reset';
+    className?: string;
 }
 
 export const ROUTES = {
